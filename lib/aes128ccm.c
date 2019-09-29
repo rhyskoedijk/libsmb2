@@ -21,6 +21,7 @@
 #include <string.h>
 
 #include "aes.h"
+#include "portable-endian.h"
 
 static void aes_ccm_generate_b0(unsigned char *nonce, int nlen,
                                 int alen, int plen, int mlen,

@@ -11,6 +11,7 @@
 *.pdb
 *.ex?
 *-stamp
+*.code-workspace
 Makefile
 aclocal.m4
 ar-lib

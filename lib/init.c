@@ -74,6 +74,11 @@
 #endif
 #endif // __ANDROID__
 
+#ifdef __SWITCH__
+#include <errno.h>
+#define getlogin_r(a,b) ENXIO
+#endif // __SWITCH__
+
 static int
 smb2_parse_args(struct smb2_context *smb2, const char *args)
 {
