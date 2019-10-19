@@ -747,9 +747,14 @@ smb2_connect_async(struct smb2_context *smb2, const char *server,
         } else {
                 port = "445";
         }
+        
+        struct addrinfo hints;
+        memset(&hints, 0, sizeof hints);
+        hints.ai_family = AF_INET; // AF_INET or AF_INET6 to force version
+        hints.ai_socktype = SOCK_STREAM;
 
         /* is it a hostname ? */
-        if (getaddrinfo(host, port, NULL, &ai) != 0) {
+        if (getaddrinfo(host, port, &hints, &ai) != 0) {
                 free(addr);
                 smb2_set_error(smb2, "Invalid address:%s  "
                                "Can not resolv into IPv4/v6.", server);
