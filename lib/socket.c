@@ -82,7 +82,7 @@
 
 #ifdef __SWITCH__
 
-//#include <netdb.h>
+#include <netdb.h>
 #include <netinet/tcp.h>
 #include <netinet/in.h>
 #include <poll.h>
