@@ -4,6 +4,7 @@ lib_LTLIBRARIES = libsmb2.la
 
 libsmb2_la_CPPFLAGS = -I$(abs_top_srcdir)/include \
 		      -I$(abs_top_srcdir)/include/smb2 \
+			  -I$(DEVKITPRO)/libnx/include \
 		      "-D_U_=__attribute__((unused))"
 
 libsmb2_la_SOURCES = \
